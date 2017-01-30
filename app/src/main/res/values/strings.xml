@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TopTenApps</string>
+    <string name="free_tab_title">Top Free Apps</string>
+    <string name="paid_tab_title">Top Paid Apps</string>
 </resources>
