@@ -2,8 +2,11 @@ package com.ferdyrodriguez.toptenapps;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+
+import com.ferdyrodriguez.toptenapps.Adapters.FragmentPagerAdapter;
 
 public class ContainerActivity extends AppCompatActivity {
 
@@ -15,10 +18,12 @@ public class ContainerActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        FragmentPagerAdapter adapter = new FragmentPagerAdapter(getSupportFragmentManager(), ContainerActivity.this);
+
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPager.setAdapter(adapter);
+
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.free_tab_title));
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.paid_tab_title));
-
+        tabLayout.setupWithViewPager(viewPager);
     }
 }
