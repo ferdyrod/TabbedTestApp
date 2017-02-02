@@ -23,11 +23,11 @@ public class AppImage {
         this.label = label;
     }
 
-    public Attributes getAimageAttributes() {
+    public Attributes getImageAttributes() {
         return imageAttributes;
     }
 
-    public void setimageAttributes(Attributes imageAttributes) {
+    public void setImageAttributes(Attributes imageAttributes) {
         this.imageAttributes = imageAttributes;
     }
 

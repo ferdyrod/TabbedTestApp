@@ -31,7 +31,7 @@ public class Entry {
     @Expose
     private AppArtist im_artist;
 
-    public AppName getIm_name() {
+    public AppName getName() {
         return im_name;
     }
 
@@ -39,7 +39,7 @@ public class Entry {
         this.im_name = im_name;
     }
 
-    public List<AppImage> getIm_image() {
+    public List<AppImage> getImage() {
         return im_image;
     }
 
@@ -47,7 +47,7 @@ public class Entry {
         this.im_image = im_image;
     }
 
-    public AppPrice getIm_price() {
+    public AppPrice getPrice() {
         return im_price;
     }
 
@@ -63,7 +63,7 @@ public class Entry {
         this.appId = appId;
     }
 
-    public AppArtist getIm_artist() {
+    public AppArtist getArtist() {
         return im_artist;
     }
 

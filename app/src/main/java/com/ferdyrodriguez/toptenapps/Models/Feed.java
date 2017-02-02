@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Feed {
 
-    @SerializedName("feed")
+    @SerializedName("entry")
     @Expose
     private List<Entry> entry = null;
 

@@ -11,4 +11,12 @@ public class AppArtist {
     @SerializedName("label")
     @Expose
     private String appArtist;
+
+    public String getAppArtist() {
+        return appArtist;
+    }
+
+    public void setAppArtist(String appArtist) {
+        this.appArtist = appArtist;
+    }
 }
