@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_margin="@dimen/activity_horizontal_margin">
+
+            <ImageView
+                android:id="@+id/appDetailIcon"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                tools:src="@mipmap/ic_launcher"
+                />
+
+            <TextView
+                android:id="@+id/appDetailName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/detail_margin"
+                android:layout_alignTop="@+id/appDetailIcon"
+                android:layout_toRightOf="@+id/appDetailIcon"
+                android:textSize="20sp"
+                tools:text="Instagram"/>
+
+            <TextView
+                android:id="@+id/appDetailDeveloper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/detail_margin"
+                android:layout_marginLeft="@dimen/detail_margin"
+                android:layout_toRightOf="@+id/appDetailIcon"
+                android:layout_below="@+id/appDetailName"
+                android:textSize="14sp"
+                tools:text="Instagram" />
+
+            <TextView
+                android:id="@+id/appDetailPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/detail_margin"
+                android:layout_marginTop="@dimen/detail_margin"
+                android:layout_marginRight="@dimen/detail_margin"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/appDetailName"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                tools:text="Free" />
+
+            <View
+                android:id="@+id/separator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_below="@id/appDetailIcon"
+                android:layout_marginTop="@dimen/detail_margin" />
+
+            <TextView
+                android:id="@+id/labelGenres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/separator"
+                android:layout_marginTop="@dimen/detail_margin"
+                android:text="@string/labelGenres"/>
+
+            <TextView
+                android:id="@+id/appDetailGenres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/labelGenres"
+                tools:text="News, Games, Games, Games"/>
+
+            <TextView
+                android:id="@+id/labelVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/appDetailGenres"
+                android:layout_marginTop="@dimen/detail_margin"
+                android:text="@string/labelVersion"/>
+
+            <TextView
+                android:id="@+id/appDetailVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/labelVersion"
+                tools:text="1.4.04"/>
+
+            <TextView
+                android:id="@+id/labelReleaseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/appDetailVersion"
+                android:layout_marginTop="@dimen/detail_margin"
+                android:text="@string/labelReleaseDate"/>
+
+            <TextView
+                android:id="@+id/appDetailReleaseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/labelReleaseDate"
+                tools:text="14/04/2010"/>
+
+            <TextView
+                android:id="@+id/labelCurrentReleaseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/appDetailReleaseDate"
+                android:layout_marginTop="@dimen/detail_margin"
+                android:text="@string/labelCurrentReleaseDate"/>
+
+            <TextView
+                android:id="@+id/appDetailCurrentReleaseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/labelCurrentReleaseDate"
+                tools:text="25/01/2016"/>
+
+            <TextView
+                android:id="@+id/labelDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/appDetailCurrentReleaseDate"
+                android:layout_marginTop="@dimen/detail_margin"
+                android:text="@string/labelDescription"/>
+
+            <TextView
+                android:id="@+id/appDetaillDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/labelDescription"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

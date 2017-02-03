@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">TopTenApps</string>
     <string name="free">Free</string>
+    <string name="labelGenres">Genres</string>
+    <string name="labelVersion">Version</string>
+    <string name="labelReleaseDate">Release Date</string>
+    <string name="labelCurrentReleaseDate">Current Version Date</string>
+    <string name="labelDescription">Description</string>
 
 </resources>

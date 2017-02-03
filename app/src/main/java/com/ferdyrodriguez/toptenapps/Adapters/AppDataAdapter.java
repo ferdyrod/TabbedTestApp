@@ -2,7 +2,6 @@ package com.ferdyrodriguez.toptenapps.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,23 +21,43 @@ import java.util.List;
 
 public class AppDataAdapter extends RecyclerView.Adapter<AppDataAdapter.ViewHolder> {
 
+    private AppItemClickListener listener;
+
+    public interface AppItemClickListener {
+
+        void onItemClick(View itemView, int position);
+    }
+
+    public void setOnItemClickListener(AppItemClickListener listener) {
+        this.listener = listener;
+    }
+
     private final Context context;
+
     private final List<Entry> appData;
 
-    public AppDataAdapter(Context context, List<Entry> appData) {
+    public AppDataAdapter(Context context, List<Entry> appData, AppItemClickListener listener) {
         super();
         this.context = context;
         this.appData = appData;
+        this.listener = listener;
     }
 
     @Override
     public AppDataAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_layout, parent, false);
+        final ViewHolder viewHolder = new ViewHolder(view);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onItemClick(view, viewHolder.getAdapterPosition());
+            }
+        });
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
 
         int length = appData.get(position).getImage().size();
 
@@ -47,7 +66,6 @@ public class AppDataAdapter extends RecyclerView.Adapter<AppDataAdapter.ViewHold
 
             if (height.equals("100")) {
                 String imageUrl = appData.get(position).getImage().get(i).getLabel();
-                Log.d("Recyclerview", "onBindViewHolder: " + imageUrl);
                 Picasso.with(context)
                         .load(imageUrl)
                         .fit()
@@ -76,22 +94,33 @@ public class AppDataAdapter extends RecyclerView.Adapter<AppDataAdapter.ViewHold
         TextView appArtist;
         TextView appPrice;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(final View itemView) {
             super(itemView);
             appImage = (ImageView) itemView.findViewById(R.id.appImage);
             appName = (TextView) itemView.findViewById(R.id.appName);
             appArtist = (TextView) itemView.findViewById(R.id.appDeveloper);
             appPrice = (TextView) itemView.findViewById(R.id.appPrice);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (listener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            listener.onItemClick(itemView, position);
+                        }
+                    }
+                }
+            });
         }
     }
 
     public void setEntriesList(List<Entry> entries) {
         this.appData.clear();
-        if(entries == null){
+        if (entries == null) {
             return;
         }
         this.appData.addAll(entries);
         notifyDataSetChanged();
     }
-
 }
