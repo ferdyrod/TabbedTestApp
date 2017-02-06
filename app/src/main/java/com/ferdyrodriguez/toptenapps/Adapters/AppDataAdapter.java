@@ -53,7 +53,7 @@ public class AppDataAdapter extends RecyclerView.Adapter<AppDataAdapter.ViewHold
                 listener.onItemClick(view, viewHolder.getAdapterPosition());
             }
         });
-        return new ViewHolder(view);
+        return viewHolder;
     }
 
     @Override
@@ -100,18 +100,6 @@ public class AppDataAdapter extends RecyclerView.Adapter<AppDataAdapter.ViewHold
             appName = (TextView) itemView.findViewById(R.id.appName);
             appArtist = (TextView) itemView.findViewById(R.id.appDeveloper);
             appPrice = (TextView) itemView.findViewById(R.id.appPrice);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (listener != null) {
-                        int position = getAdapterPosition();
-                        if (position != RecyclerView.NO_POSITION) {
-                            listener.onItemClick(itemView, position);
-                        }
-                    }
-                }
-            });
         }
     }
 
